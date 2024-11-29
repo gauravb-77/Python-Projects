@@ -1,6 +1,7 @@
 from datetime import datetime
 import csv
 import pandas as pd
+import matplotlib.pyplot as plt
 
 
 def add_expense():
@@ -121,16 +122,44 @@ def view_expenses():
         print(f"An error occurred: {e}")
 
 
+def show_graphs(csv_file):
+    try:
+        df = pd.read_csv(csv_file)
+
+        if df.empty:
+            print("No expense data available to display.")
+            return
+
+        # Group data by category and sum amounts
+        category_data = df.groupby("Category")["Amount"].sum()
+
+        # Plot the bar chart
+        plt.bar(category_data.index, category_data.values, color='skyblue')
+        plt.title("Expenses by Category")
+        plt.xlabel("Category")
+        plt.ylabel("Amount")
+        plt.xticks(rotation=45)  # Rotate labels for better visibility
+        plt.tight_layout()  # Adjust layout
+        plt.show()
+
+    except FileNotFoundError:
+        print(f"Error: The file '{csv_file}' does not exist.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+
 def run():
 
     while True:
         print("\n** Personal Finance Tracker")
-        choice = input("Enter your choice - 1 to Add Expense, 2 to View All Expenses, q to Exit: ")
+        choice = input("Enter your choice - 1 to Add Expense, 2 to View All Expenses as raw data, 3 to View Expense graphs, q to Exit: ")
 
         if choice == '1':
             expense = add_expense()
         elif choice == '2':
             view_expenses()
+        elif choice == '3':
+            show_graphs("expense_file.csv")
         elif choice.lower() == 'q':
             print("Thank you! Have a nice day :)")
             break
