@@ -1,1 +1,0 @@
-words = ("apple", "ball", "cat", "dog", "fish", "star", "moon", "cake", "car", "tree", "bird", "cloud", "book", "milk", "water", "dolphin", "jungle", "garden", "pirate", "rocket", "ladder", "camera", "candle", "farmer", "guitar", "planet", "bridge", "island", "shadow", "castle")
