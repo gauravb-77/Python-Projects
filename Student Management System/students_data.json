@@ -1,17 +1,502 @@
 [
     {
         "Roll No.": 1,
-        "Name": "Pratik B",
-        "Grade": "A"
+        "Name": "Aarav Sharma",
+        "Grade": "F"
     },
     {
         "Roll No.": 2,
-        "Name": "Gaurav Bopardikar",
-        "Grade": "A"
+        "Name": "Vivaan Khanna",
+        "Grade": "E"
     },
     {
         "Roll No.": 3,
-        "Name": "Chaman",
+        "Name": "Aditya Patel",
+        "Grade": "F"
+    },
+    {
+        "Roll No.": 4,
+        "Name": "Ananya Reddy",
+        "Grade": "D"
+    },
+    {
+        "Roll No.": 5,
+        "Name": "Ishita Gupta",
+        "Grade": "E"
+    },
+    {
+        "Roll No.": 6,
+        "Name": "Riya Mehta",
+        "Grade": "E"
+    },
+    {
+        "Roll No.": 7,
+        "Name": "Krish Menon",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 8,
+        "Name": "Arjun Chatterjee",
         "Grade": "B"
+    },
+    {
+        "Roll No.": 9,
+        "Name": "Diya Singh",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 10,
+        "Name": "Priya Rao",
+        "Grade": "D"
+    },
+    {
+        "Roll No.": 11,
+        "Name": "Rahul Deshmukh",
+        "Grade": "F"
+    },
+    {
+        "Roll No.": 12,
+        "Name": "Kavya Joshi",
+        "Grade": "C"
+    },
+    {
+        "Roll No.": 13,
+        "Name": "Sneha Das",
+        "Grade": "E"
+    },
+    {
+        "Roll No.": 14,
+        "Name": "Rajiv Nair",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 15,
+        "Name": "Meera Kulkarni",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 16,
+        "Name": "Siddharth Sen",
+        "Grade": "F"
+    },
+    {
+        "Roll No.": 17,
+        "Name": "Aryan Shah",
+        "Grade": "E"
+    },
+    {
+        "Roll No.": 18,
+        "Name": "Sanjana Bhat",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 19,
+        "Name": "Manav Kumar",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 20,
+        "Name": "Aditi Verma",
+        "Grade": "E"
+    },
+    {
+        "Roll No.": 21,
+        "Name": "Nisha Pandey",
+        "Grade": "E"
+    },
+    {
+        "Roll No.": 22,
+        "Name": "Kiran Mishra",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 23,
+        "Name": "Kartik Iyer",
+        "Grade": "C"
+    },
+    {
+        "Roll No.": 24,
+        "Name": "Lakshmi Pillai",
+        "Grade": "C"
+    },
+    {
+        "Roll No.": 25,
+        "Name": "Mohan Venkatesh",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 26,
+        "Name": "Rekha Chauhan",
+        "Grade": "F"
+    },
+    {
+        "Roll No.": 27,
+        "Name": "Suresh Yadav",
+        "Grade": "C"
+    },
+    {
+        "Roll No.": 28,
+        "Name": "Tanvi Gokhale",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 29,
+        "Name": "Tejas Tripathi",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 30,
+        "Name": "Harsha Reddy",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 31,
+        "Name": "Avni Agarwal",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 32,
+        "Name": "Sonal Mathur",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 33,
+        "Name": "Abhinav Tiwari",
+        "Grade": "D"
+    },
+    {
+        "Roll No.": 34,
+        "Name": "Divya Jain",
+        "Grade": "F"
+    },
+    {
+        "Roll No.": 35,
+        "Name": "Vikas Kapoor",
+        "Grade": "F"
+    },
+    {
+        "Roll No.": 36,
+        "Name": "Jaya Prasad",
+        "Grade": "C"
+    },
+    {
+        "Roll No.": 37,
+        "Name": "Shivani Shetty",
+        "Grade": "F"
+    },
+    {
+        "Roll No.": 38,
+        "Name": "Varun Saxena",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 39,
+        "Name": "Neha Lohia",
+        "Grade": "F"
+    },
+    {
+        "Roll No.": 40,
+        "Name": "Rohan Pawar",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 41,
+        "Name": "Akash Jindal",
+        "Grade": "C"
+    },
+    {
+        "Roll No.": 42,
+        "Name": "Ritika Malhotra",
+        "Grade": "F"
+    },
+    {
+        "Roll No.": 43,
+        "Name": "Nitin Bal",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 44,
+        "Name": "Simran Dutta",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 45,
+        "Name": "Ajay Chauhan",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 46,
+        "Name": "Isha Kaul",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 47,
+        "Name": "Pooja Saxena",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 48,
+        "Name": "Naveen Ahuja",
+        "Grade": "E"
+    },
+    {
+        "Roll No.": 49,
+        "Name": "Anil Rana",
+        "Grade": "E"
+    },
+    {
+        "Roll No.": 50,
+        "Name": "Gayatri Desai",
+        "Grade": "D"
+    },
+    {
+        "Roll No.": 51,
+        "Name": "Kajal Joshi",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 52,
+        "Name": "Deepak Gupta",
+        "Grade": "F"
+    },
+    {
+        "Roll No.": 53,
+        "Name": "Rajesh Roy",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 54,
+        "Name": "Sonal Pandey",
+        "Grade": "C"
+    },
+    {
+        "Roll No.": 55,
+        "Name": "Shreya Nair",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 56,
+        "Name": "Ankit Mehra",
+        "Grade": "D"
+    },
+    {
+        "Roll No.": 57,
+        "Name": "Poonam Kapoor",
+        "Grade": "D"
+    },
+    {
+        "Roll No.": 58,
+        "Name": "Vivek Garg",
+        "Grade": "F"
+    },
+    {
+        "Roll No.": 59,
+        "Name": "Harshita Kapoor",
+        "Grade": "F"
+    },
+    {
+        "Roll No.": 60,
+        "Name": "Vani Iyer",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 61,
+        "Name": "Arvind Verma",
+        "Grade": "F"
+    },
+    {
+        "Roll No.": 62,
+        "Name": "Tara Menon",
+        "Grade": "F"
+    },
+    {
+        "Roll No.": 63,
+        "Name": "Gautam Sen",
+        "Grade": "D"
+    },
+    {
+        "Roll No.": 64,
+        "Name": "Komal Agrawal",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 65,
+        "Name": "Omkar Jain",
+        "Grade": "F"
+    },
+    {
+        "Roll No.": 66,
+        "Name": "Devika Sharma",
+        "Grade": "D"
+    },
+    {
+        "Roll No.": 67,
+        "Name": "Ashish Thakur",
+        "Grade": "C"
+    },
+    {
+        "Roll No.": 68,
+        "Name": "Snehal Bhattacharya",
+        "Grade": "E"
+    },
+    {
+        "Roll No.": 69,
+        "Name": "Chirag Mathur",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 70,
+        "Name": "Nidhi Aggarwal",
+        "Grade": "D"
+    },
+    {
+        "Roll No.": 71,
+        "Name": "Arpita Goswami",
+        "Grade": "C"
+    },
+    {
+        "Roll No.": 72,
+        "Name": "Rajiv Jain",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 73,
+        "Name": "Yashwant Kumar",
+        "Grade": "F"
+    },
+    {
+        "Roll No.": 74,
+        "Name": "Sakshi Mehta",
+        "Grade": "E"
+    },
+    {
+        "Roll No.": 75,
+        "Name": "Raghav Bhatt",
+        "Grade": "C"
+    },
+    {
+        "Roll No.": 76,
+        "Name": "Tanya Mishra",
+        "Grade": "F"
+    },
+    {
+        "Roll No.": 77,
+        "Name": "Sumit Tiwari",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 78,
+        "Name": "Anshuman Banerjee",
+        "Grade": "C"
+    },
+    {
+        "Roll No.": 79,
+        "Name": "Ankita Bansal",
+        "Grade": "D"
+    },
+    {
+        "Roll No.": 80,
+        "Name": "Payal Chatterjee",
+        "Grade": "E"
+    },
+    {
+        "Roll No.": 81,
+        "Name": "Adarsh Das",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 82,
+        "Name": "Bhavna Reddy",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 83,
+        "Name": "Uday Gupta",
+        "Grade": "C"
+    },
+    {
+        "Roll No.": 84,
+        "Name": "Parul Singh",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 85,
+        "Name": "Sahil Arora",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 86,
+        "Name": "Ira Naik",
+        "Grade": "E"
+    },
+    {
+        "Roll No.": 87,
+        "Name": "Mira Chopra",
+        "Grade": "D"
+    },
+    {
+        "Roll No.": 88,
+        "Name": "Shyam Shastri",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 89,
+        "Name": "Ranjan Saha",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 90,
+        "Name": "Vidya Kurup",
+        "Grade": "F"
+    },
+    {
+        "Roll No.": 91,
+        "Name": "Armaan Saxena",
+        "Grade": "D"
+    },
+    {
+        "Roll No.": 92,
+        "Name": "Kritika Menon",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 93,
+        "Name": "Hemant Chandra",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 94,
+        "Name": "Ajit Patil",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 95,
+        "Name": "Sheetal Dholakia",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 96,
+        "Name": "Shilpa Roy",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 97,
+        "Name": "Rajeshwari Pillai",
+        "Grade": "F"
+    },
+    {
+        "Roll No.": 98,
+        "Name": "Harish Chatterjee",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 99,
+        "Name": "Rakesh Nair",
+        "Grade": "E"
+    },
+    {
+        "Roll No.": 100,
+        "Name": "Anjali Vaidya",
+        "Grade": "A"
     }
 ]

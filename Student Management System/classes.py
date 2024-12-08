@@ -106,7 +106,7 @@ class StudentManager:
     @classmethod
     def view_student_details(cls):
         if not cls.student_obj_list:
-            print("\nCurrently there is no any student present in our list. First add students.")
+            print("\nNo students available to view details. Add students first.")
             return
 
         prompt = "\nEnter student's roll number whose details you want to see: "
@@ -121,7 +121,7 @@ class StudentManager:
     @classmethod
     def update_student_details(cls):
         if not cls.student_obj_list:
-            print("\nCurrently there is no any student present in our list. First add students.")
+            print("\nNo students available to update details. Add students first.")
             return
 
         roll_number_input_prompt = "\nEnter student's roll number whose details you want to update: "
@@ -162,10 +162,49 @@ class StudentManager:
     @classmethod
     def view_all_students(cls):
         if not cls.student_obj_list:
-            print("\nCurrently there is no any student present in our list. First add students.")
+            print("\nNo students available to view. Add students first.")
             return
 
         print("\nThese are all our students:\n")
         for student in cls.student_obj_list:
             print(f"{student["Roll No."]}. {student["Name"]}")
+
+    @staticmethod
+    def display_sorted_data(sorted_data):
+        for student in sorted_data:
+            print(f"Roll No.: {student["Roll No."]}, Name: {student["Name"]}, Grade: {student["Grade"]}")
+
+    @classmethod
+    def sort_students(cls):
+        if not cls.student_obj_list:
+            print("\nNo students available to sort. Add students first.")
+            return
+
+        while True:
+            print("\nChoose sorting criteria:")
+            print("1. Roll Number")
+            print("2. Name")
+            print("3. Grade")
+            print("4. Go Back to Main Menu")
+            sort_choice = input("Enter your choice: ")
+
+            if sort_choice == '1':
+                sorted_by_roll_number_data = sorted(cls.student_obj_list, key=lambda x: x["Roll No."])
+                print("\nStudents sorted by Roll Number:")
+                cls.display_sorted_data(sorted_by_roll_number_data)
+            elif sort_choice == '2':
+                sorted_by_name_data = sorted(cls.student_obj_list, key=lambda x: x["Name"].lower())
+                print("\nStudents sorted by Name:")
+                cls.display_sorted_data(sorted_by_name_data)
+            elif sort_choice == '3':
+                sorted_by_grade_data = sorted(cls.student_obj_list, key=lambda x: x["Grade"])
+                print("\nStudents sorted by Grade:")
+                cls.display_sorted_data(sorted_by_grade_data)
+            elif sort_choice == '4':
+                print("\nReturning to main menu.")
+                break
+            else:
+                print("\nInvalid Choice. Please try again :)")
+
+
 

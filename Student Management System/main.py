@@ -10,9 +10,10 @@ def main():
         print("3. Update Student Grade")
         print("4. View All Students")
         print("5. Remove Student")
-        print("6. Exit\n")
+        print("6. Sort Students")
+        print("7. Exit")
 
-        choice = input()
+        choice = input("Enter your choice: ")
 
         if choice == '1':
             StudentManager.add_student()
@@ -25,6 +26,8 @@ def main():
         elif choice == '5':
             StudentManager.remove_student()
         elif choice == '6':
+            StudentManager.sort_students()
+        elif choice == '7':
             print("\nThank You For Visiting :)")
             break
         else:
