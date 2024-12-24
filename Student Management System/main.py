@@ -34,10 +34,10 @@ def main():
         elif choice == '8':
             StudentManager.manage_data()
         elif choice == '9':
-            print("\nThank You For Visiting :)")
+            print("\nThank You For Visiting :)\n")
             break
         else:
-            print("\nInvalid Choice. Please try again!")
+            print("\nInvalid Choice. Please try again.")
 
 
 if __name__ == "__main__":

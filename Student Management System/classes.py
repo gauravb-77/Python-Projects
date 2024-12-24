@@ -1,6 +1,7 @@
 import json
 from json import JSONDecodeError
 from tabulate import tabulate
+import time
 
 class Student:
     def __init__(self, name, grade):
@@ -131,7 +132,7 @@ class StudentManager:
             elif confirm_remove.lower() == 'n':
                 break
             else:
-                print("Invalid input. Please try again.")
+                print("\nInvalid input. Please try again.")
 
     @classmethod
     def update_student_details(cls):
@@ -180,8 +181,8 @@ class StudentManager:
 
     @classmethod
     def display_students_data(cls, students_data):
-        headers = students_data[0].keys()
-        rows = [student.values() for student in students_data]
+        headers = ["Roll No.", "Name", "Grade"]
+        rows = [[student["Roll No."], student["Name"], student["Grade"]] for student in students_data]
 
         print(tabulate(rows, headers, tablefmt=cls.table_style))
 
@@ -229,7 +230,7 @@ class StudentManager:
 
         cls.display_students_data(cls.student_obj_list)
 
-        print("Would you like to view details of a specific student?")
+        print("\nWould you like to view details of a specific student?")
         while True:
             choice = input("Enter their Roll Number (or press Enter to return to the main menu): ")
 
@@ -285,7 +286,7 @@ class StudentManager:
                 print("\nReturning to main menu.")
                 break
             else:
-                print("\nInvalid Choice. Please try again.")
+                print("\nInvalid choice. Please try again.")
 
     @classmethod
     def view_students_by_grade(cls):
@@ -307,6 +308,137 @@ class StudentManager:
         cls.display_students_data(target_data)
 
     @classmethod
+    def import_json_data(cls):
+        while True:
+            file_name = input("Enter the json file name to import students (Press Enter to keep default name: 'students_export.json'): ")
+
+            if file_name.endswith(".json") or not file_name:
+                break
+
+            print("\nInvalid file format. Please try again.")
+
+        import_file_name = file_name if file_name else "students_export.json"
+
+        try:
+            with open(import_file_name, 'r') as student_json_data_file:
+                import_obj_list = json.load(student_json_data_file)
+
+            if not import_obj_list:
+                print("\nFile is empty. Please try again.")
+            else:
+                if type(import_obj_list) != list:
+                    print("\nInvalid format: Expected a list of students. Please check the file structure and try again.")
+                else:
+                    for student in import_obj_list:
+                        if sorted(student.keys()) != ["Grade", "Name", "Roll No."]:
+                            print("\nInvalid keys. Please try again.")
+                            return
+                        elif student["Grade"].lower() not in "abcdef":
+                            print("\nInvalid Grade. Grade must be among these ('A', 'B', 'C', 'D', 'E', 'F').")
+                            return
+                        elif type(student["Name"]) != str:
+                            print("\nInvalid Name. Name must be of string type.")
+                            return
+                        elif type(student["Roll No."]) != int:
+                            print("\nInvalid Roll Number. Roll Number must of integer type.")
+                            return
+                    else:
+                        print(f"\nImporting students from '{import_file_name}'...")
+                        time.sleep(2)
+                        cls.student_obj_list.extend(import_obj_list)
+                        cls._modify_roll_numbers()
+                        cls._save_student_data(cls.json_file_name)
+
+                        if len(import_obj_list) == 1:
+                            print(f"\nSuccessfully imported {len(import_obj_list)} student.")
+                        else:
+                            print(f"\nSuccessfully imported {len(import_obj_list)} students.")
+                            
+        except FileNotFoundError:
+            print(f"\nFile with name {import_file_name} does not exist.")
+        except JSONDecodeError:
+            print("\nJSON data is invalid. Please check the file structure and try again.")
+
+    @classmethod
+    def export_json_data(cls):
+        while True:
+            file_name = input("\nEnter the json file name to export students (Press Enter to keep default name: 'students_export.json'): ")
+
+            if file_name.endswith(".json") or not file_name:
+                break
+
+            print("\nInvalid file format. Please try again.")
+
+        export_file_name = file_name if file_name else "students_export.json"
+
+        while True:
+            print("\nChoose a category to filter students for export:")
+            print("\n1. Export all students")
+            print("2. By Grade")
+            print("3. By Name (Enter a specific name or partial match)")
+            print("4. By Roll Number Range (e.g., 1-10)\n")
+
+            choice = input("Enter your choice (1-4): ")
+
+            if choice == '1':
+                export_python_data = cls.student_obj_list
+                break
+            elif choice == '2':
+                grade_filter_input_prompt = "\nEnter the grade to filter by (A-F): "
+                grade_filter_choice = cls.get_valid_input_grade(grade_filter_input_prompt)
+
+                export_python_data = [student for student in cls.student_obj_list if student["Grade"] == grade_filter_choice]
+
+                break
+            elif choice == '3':
+                name_filter_choice = input("\nEnter the name or partial name to filter by: ").strip()
+
+                export_python_data = [student for student in cls.student_obj_list if name_filter_choice.lower() in student["Name"].lower()]
+
+                break
+            elif choice == '4':
+                while True:
+                    roll_number_filter_range = input("\nEnter the roll number range to filter (e.g., 1-10): ").strip()
+
+                    if roll_number_filter_range.count('-') == 1:
+                        starting_roll_num, ending_roll_num = roll_number_filter_range.split('-')
+
+                        if starting_roll_num.isdigit() and ending_roll_num.isdigit():
+                            starting_roll_num, ending_roll_num = int(starting_roll_num), int(ending_roll_num)
+                            if starting_roll_num == 0 or ending_roll_num == 0:
+                                print("Roll numbers must be positive. Please try again.")
+                            elif starting_roll_num > ending_roll_num:
+                                print("Start roll number cannot be greater than the end roll number. Please try again.")
+                            elif ending_roll_num > len(cls.student_obj_list):
+                                print(f"Roll numbers must be between 1 and {len(cls.student_obj_list)} (total students in the system). Please try again.")
+                            else:
+                                valid_roll_number_filter_range = list(range(starting_roll_num, ending_roll_num + 1))
+                                export_python_data = [student for student in cls.student_obj_list if student["Roll No."] in valid_roll_number_filter_range]
+
+                                break
+                        else:
+                            print("\nRoll numbers must be positive integers. Please try again.")
+                    else:
+                        print("\nInvalid range format. Use the format 'start-end', e.g., '1-10'.")
+
+                break
+            else:
+                print("\nInvalid choice. Please try again.")
+                continue
+
+        if export_python_data:
+            export_json_data = json.dumps(export_python_data, indent=4)
+
+            with open(export_file_name, 'w') as export_file:
+                export_file.write(export_json_data)
+
+            suffix = 's' if len(export_python_data) > 1 else ''
+
+            print(f"\nStudents successfully exported to '{export_file_name}'  (Total: {len(export_python_data)} student{suffix}). You can find the file in the current directory.")
+        else:
+            print("No students found matching the selected criteria. Export canceled.")
+
+    @classmethod
     def manage_data(cls):
         while True:
             print("\nData Management Options:")
@@ -316,11 +448,12 @@ class StudentManager:
 
             choice = input("\nEnter your choice (1-3): ")
 
-            if choice not in '123':
-                print("Invalid choice. Please try again.")
-                continue
-
-            if choice == '2':
-                pass
-
-
+            if choice == '3':
+                break
+            elif choice == '1':
+                cls.import_json_data()   
+            elif choice == '2':
+                cls.export_json_data()
+            else:
+                print("\nInvalid choice. Please try again.")
+            

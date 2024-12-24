@@ -516,7 +516,57 @@
     },
     {
         "Roll No.": 104,
-        "Name": "rr",
+        "Name": "John Doe",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 105,
+        "Name": "Jane Smith",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 106,
+        "Name": "John Doe",
+        "Grade": "C"
+    },
+    {
+        "Roll No.": 107,
+        "Name": "Emily Johnson",
+        "Grade": "D"
+    },
+    {
+        "Roll No.": 108,
+        "Name": "Invalid Grade Example",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 109,
+        "Name": "Invalid Roll No. Example",
+        "Grade": "A"
+    },
+    {
+        "Roll No.": 110,
+        "Name": "12345",
+        "Grade": "E"
+    },
+    {
+        "Roll No.": 111,
+        "Name": "Valid Student",
         "Grade": "F"
+    },
+    {
+        "Roll No.": 112,
+        "Name": "Duplicate Name Example",
+        "Grade": "B"
+    },
+    {
+        "Roll No.": 113,
+        "Name": "Duplicate Name Example",
+        "Grade": "C"
+    },
+    {
+        "Name": "gauri",
+        "Roll No.": 114,
+        "Grade": "A"
     }
 ]
